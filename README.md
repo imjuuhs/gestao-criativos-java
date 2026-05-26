@@ -2,14 +2,6 @@
 
 Trabalho prático da disciplina de Modelos, Métodos e Técnicas de Engenharia de Software.
 
-Repositório: https://github.com/imjuuhs/gestao-criativos-java
-
-## Integrante
-
-| Nome | RA |
-|---|---|
-| Júlia Starling Negrini Fudoli | 124222027 |
-
 ## Sobre o projeto
 
 O projeto é um back-end em Java para ajudar na organização de criativos de campanhas digitais.
