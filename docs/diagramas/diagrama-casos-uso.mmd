@@ -1,0 +1,12 @@
+flowchart LR
+    A[Analista de criativos] --> B[Cadastrar oferta]
+    A --> C[Cadastrar criativo]
+    A --> D[Avaliar criativo]
+    A --> E[Consultar fila de modelagem]
+
+    F[Criador de conteúdo] --> E
+    G[Editor] --> E
+
+    C --> H[Validar dados]
+    D --> I[Gerar pontuação]
+    I --> J[Definir status]

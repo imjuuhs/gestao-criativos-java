@@ -1,0 +1,86 @@
+classDiagram
+    class Offer {
+        -String id
+        -String name
+        -OfferNiche niche
+        -int priceInCents
+        -boolean active
+        +deactivate()
+    }
+
+    class Creative {
+        -String id
+        -String title
+        -String primaryText
+        -String sourceUrl
+        -CreativeType type
+        -String offerId
+        -CreativeStatus status
+        -int score
+        +applyEvaluation(EvaluationResult result)
+        +addNote(String note)
+    }
+
+    class EvaluationResult {
+        -int score
+        -CreativeStatus status
+        -List~String~ reasons
+    }
+
+    class OfferRepository {
+        <<interface>>
+        +save(Offer offer)
+        +findById(String id)
+        +findAll()
+    }
+
+    class CreativeRepository {
+        <<interface>>
+        +save(Creative creative)
+        +findById(String id)
+        +findAll()
+        +findByStatus(CreativeStatus status)
+    }
+
+    class OfferService
+    class CreativeService
+    class CreativeWorkflowFacade
+
+    class CreativeEvaluator {
+        <<interface>>
+        +evaluate(Creative creative)
+    }
+
+    class VideoCreativeEvaluator
+    class ImageCreativeEvaluator
+    class TextCreativeEvaluator
+    class CreativeEvaluatorFactory
+
+    class CreativeValidationHandler {
+        <<interface>>
+        +validate(ValidationContext context)
+    }
+
+    class RequiredFieldsValidation
+    class OfferExistsValidation
+    class CopyLengthValidation
+    class SourceUrlValidation
+    class ExternalAdDTO
+    class ExternalAdAdapter
+
+    OfferService --> OfferRepository
+    CreativeService --> CreativeRepository
+    CreativeWorkflowFacade --> CreativeService
+    CreativeWorkflowFacade --> OfferRepository
+    CreativeWorkflowFacade --> CreativeEvaluatorFactory
+    CreativeWorkflowFacade --> CreativeValidationHandler
+    Creative --> EvaluationResult
+    VideoCreativeEvaluator ..|> CreativeEvaluator
+    ImageCreativeEvaluator ..|> CreativeEvaluator
+    TextCreativeEvaluator ..|> CreativeEvaluator
+    RequiredFieldsValidation ..|> CreativeValidationHandler
+    OfferExistsValidation ..|> CreativeValidationHandler
+    CopyLengthValidation ..|> CreativeValidationHandler
+    SourceUrlValidation ..|> CreativeValidationHandler
+    ExternalAdAdapter --> ExternalAdDTO
+    ExternalAdAdapter --> Creative
