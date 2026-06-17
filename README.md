@@ -42,7 +42,6 @@ Escolhi deixar sem Spring Boot e sem banco de dados porque o enunciado permite u
 ```text
 gestao-criativos-java/
 ├── docs/
-│   ├── integrantes.md
 │   ├── problema.md
 │   ├── requisitos.md
 │   ├── modelagem.md
