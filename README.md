@@ -7,6 +7,7 @@ Trabalho prático da disciplina de Modelos, Métodos e Técnicas de Engenharia d
 | Nome | RA |
 |---|---|
 | Júlia Starling Negrini Fudoli | 124222027 |
+| Ana Caroline Valerio Moreira | 12318791 |
 |  |  |
 
 ## Sobre o projeto
